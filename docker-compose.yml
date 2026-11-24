@@ -1,0 +1,8 @@
+services:
+  ghsync:
+    build: .
+    container_name: ghsync
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./data:/data   # token.json + health.db live here

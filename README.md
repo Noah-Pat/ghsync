@@ -14,7 +14,7 @@ A small Docker container that polls the [Google Health API](https://developers.g
 | Create the OAuth client: type **Desktop app**. It needs no redirect URI, because `http://localhost:<port>` is allowed automatically | https://console.cloud.google.com/auth/clients |
 | Reference: scopes, data types, rate limits | [scopes](https://developers.google.com/health/scopes) · [data types](https://developers.google.com/health/data-types) · [rate limits](https://developers.google.com/health/rate-limits) |
 
-> **7-day token expiry:** while the app's publishing status is **Testing**, Google refresh tokens expire after 7 days, and you'd need to run `login` again every week. Google's docs say unverified clients are capped at 100 users "for both testing and production". So clicking **Publish app** on the Audience page *should* give you a refresh token that doesn't expire, without a security review. Expect an "unverified app" warning when you sign in. This hasn't been confirmed for these restricted scopes, so test it.
+> **7-day token expiry:** while the app's publishing status is **Testing**, Google refresh tokens expire after 7 days, and you'd need to run `login` again every week. Google's docs say unverified clients are capped at 100 users "for both testing and production". Clicking **Publish app** on the Audience page fixes this without a security review: after publishing and running `login` again, the token comes back with no expiry. Publishing first requires an app name, a support email, a homepage and a privacy policy on the Branding page. Expect an "unverified app" warning when you sign in; click **Advanced → Go to (app)**.
 
 ## 2. Configure and log in
 
